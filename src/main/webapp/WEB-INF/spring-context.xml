@@ -18,6 +18,15 @@
         <!--<property name="password" value="password"/>-->
     </bean>
 
+    <!--<bean id="dataSource"-->
+          <!--class="org.apache.commons.dbcp.BasicDataSource">-->
+        <!--<property name="driverClassName" value="org.h2.Driver"/>-->
+        <!--<property name="url" value="jdbc:h2:tcp://localhost/~/hc"/>-->
+        <!--<property name="username" value="sa"/>-->
+        <!--&lt;!&ndash;<property name="password" value="new1prog$"/>&ndash;&gt;-->
+        <!--<property name="password" value=""/>-->
+    <!--</bean>-->
+
     <bean id="gSql" class="groovy.sql.Sql">
         <constructor-arg ref="dataSource"/>
     </bean>
@@ -36,73 +45,80 @@
         <constructor-arg>
             <map>
 
-            <entry key="user" value="id"></entry>
+                        <entry key="user" value="id"></entry>
 
-            <entry key="userlog" value="id"></entry>
+                        <entry key="userlog" value="id"></entry>
 
-            <entry key="authtoken" value="id"></entry>
+                        <entry key="authtoken" value="id"></entry>
 
-            <entry key="datachangelog" value="id"></entry>
+                        <entry key="datachangelog" value="id"></entry>
 
-            <entry key="area" value="areaId"></entry>
+                        <entry key="area" value="areaId"></entry>
 
-            <entry key="house" value="houseId"></entry>
+                        <entry key="house" value="houseId"></entry>
 
-            <entry key="household" value="householdId"></entry>
+                        <entry key="household" value="householdId"></entry>
 
-            <entry key="member" value="memberId"></entry>
+                        <entry key="member" value="memberId"></entry>
 
-            <entry key="hcMember" value="memberId"></entry>
+                        <entry key="hcMember" value="memberId"></entry>
 
-            <entry key="enumVisit" value="id"></entry>
+                        <entry key="enumVisit" value="id"></entry>
 
-            <entry key="hcVisit" value="id"></entry>
+                        <entry key="hcVisit" value="id"></entry>
 
-            <entry key="householdCommonQs" value="householdId"></entry>
+                        <entry key="householdCommonQs" value="householdId"></entry>
 
-            <entry key="householdFoodItems" value="householdId"></entry>
+                        <entry key="householdFoodItems" value="householdId"></entry>
 
-            <entry key="householdHosp" value="id"></entry>
+                        <entry key="hospInf" value="householdId"></entry>
 
-            <entry key="householdDeath" value="id"></entry>
+                        <entry key="deathInf" value="householdId"></entry>
 
-            <entry key="memberBp1" value="memberId"></entry>
+                        <entry key="householdHosp" value="id"></entry>
 
-            <entry key="memberBp2" value="memberId"></entry>
+                        <entry key="householdDeath" value="id"></entry>
 
-            <entry key="memberTobaccoAlcohol" value="memberId"></entry>
+                        <entry key="memberBp1" value="memberId"></entry>
 
-            <entry key="memberPersonalMedicalHistory" value="memberId"></entry>
+                        <entry key="memberBp2" value="memberId"></entry>
 
-            <entry key="memberFamilyMedicalHistory" value="memberId"></entry>
+                        <entry key="memberTobaccoAlcohol" value="memberId"></entry>
 
-            <entry key="memberPhysicalActivities" value="memberId"></entry>
+                        <entry key="memberPersonalMedicalHistory" value="memberId"></entry>
 
-            <entry key="ffqGeneral" value="memberId"></entry>
+                        <entry key="memberFamilyMedicalHistory" value="memberId"></entry>
 
-            <entry key="ffqBeverages" value="memberId"></entry>
+                        <entry key="memberPhysicalActivities" value="memberId"></entry>
 
-            <entry key="ffqCereals" value="memberId"></entry>
+                        <entry key="ffqGeneral" value="memberId"></entry>
 
-            <entry key="ffqPulses" value="memberId"></entry>
+                        <entry key="ffqBeverages" value="memberId"></entry>
 
-            <entry key="ffqVeg" value="memberId"></entry>
+                        <entry key="ffqCereals" value="memberId"></entry>
 
-            <entry key="ffqRaw" value="memberId"></entry>
+                        <entry key="ffqPulses" value="memberId"></entry>
 
-            <entry key="ffqFruits" value="memberId"></entry>
+                        <entry key="ffqVeg" value="memberId"></entry>
 
-            <entry key="ffqJuice" value="memberId"></entry>
+                        <entry key="ffqRaw" value="memberId"></entry>
 
-            <entry key="ffqNonVeg" value="memberId"></entry>
+                        <entry key="ffqFruits" value="memberId"></entry>
 
-            <entry key="ffqSweets" value="memberId"></entry>
+                        <entry key="ffqJuice" value="memberId"></entry>
 
-            <entry key="ffqSpiceMix" value="memberId"></entry>
+                        <entry key="ffqNonVeg" value="memberId"></entry>
 
-            <entry key="ffqSnacks" value="memberId"></entry>
+                        <entry key="ffqSweets" value="memberId"></entry>
 
-            <entry key="ffqFoodAdditives" value="memberId"></entry>
+                        <entry key="ffqSpiceMix" value="memberId"></entry>
+
+                        <entry key="ffqSnacks" value="memberId"></entry>
+
+                        <entry key="ffqFoodAdditives" value="memberId"></entry>
+
+                        <entry key="resampling" value="memberId"></entry>
+
             </map>
         </constructor-arg>
     </bean>

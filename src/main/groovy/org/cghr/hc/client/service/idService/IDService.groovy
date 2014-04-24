@@ -36,7 +36,9 @@ class IDService {
 
     String generateNextId(String sql, List params, HttpServletRequest request, String context) {
 
-        long id = gSql.firstRow(sql, params).id;
+        Map row = gSql.firstRow(sql, params);
+        Long id = (row.id==null) ? 0 : row.id;
+        println 'id '+id;
         def nextId = ""
 
         if (id == 0) {
@@ -59,7 +61,7 @@ class IDService {
     String getNextHouseId(HttpServletRequest request, HttpServletResponse response,
                           @PathVariable("areaId") long areaId) {
 
-        sql = "SELECT IF(MAX(houseId) IS NULL,0,MAX(houseId)) id FROM house WHERE areaId=?";
+        sql = "SELECT MAX(houseId) id FROM house WHERE areaId=?";
         generateNextId(sql, [areaId], request, "house")
 
     }
@@ -69,7 +71,7 @@ class IDService {
     String getNextHouseholdId(HttpServletRequest request, HttpServletResponse response,
                               @PathVariable("houseId") long houseId) {
 
-        sql = "SELECT IF(MAX(householdId) IS NULL,0,MAX(householdId)) id FROM household WHERE  houseId=?";
+        sql = "SELECT MAX(householdId) id FROM household WHERE  houseId=?";
         generateNextId(sql, [houseId], request, "household")
 
 
@@ -87,7 +89,7 @@ class IDService {
         if (householdExists == 0)
             gSql.execute("INSERT INTO household(householdId) values(?)", [householdId])
 
-        sql = "SELECT IF(MAX(id) IS NULL,0,MAX(id)) id FROM enumVisit WHERE householdId=? ";
+        sql = "SELECT MAX(id) id FROM enumVisit WHERE householdId=? ";
         generateNextId(sql, [householdId], request, "visit")
 
     }
@@ -97,7 +99,7 @@ class IDService {
     String getNextMember(HttpServletRequest request, HttpServletResponse response,
                          @PathVariable("householdId") long householdId) {
 
-        sql = "SELECT IF(MAX(memberId) IS NULL,0,MAX(memberId)) id FROM member WHERE householdId=?";
+        sql = "SELECT MAX(memberId) id FROM member WHERE householdId=?";
         generateNextId(sql, [householdId], request, "member")
 
     }
@@ -107,7 +109,7 @@ class IDService {
     String getNextDeath(HttpServletRequest request, HttpServletResponse response,
                         @PathVariable("householdId") long householdId) {
 
-        sql = "SELECT IF(MAX(id) IS NULL,0,MAX(id)) id FROM householdDeath WHERE householdId=? ";
+        sql = "SELECT MAX(id) id FROM householdDeath WHERE householdId=? ";
         generateNextId(sql, [householdId], request, "death")
 
     }
@@ -117,7 +119,7 @@ class IDService {
     String getNextHosp(HttpServletRequest request, HttpServletResponse response,
                        @PathVariable("householdId") long householdId) {
 
-        sql = "SELECT IF(MAX(id) IS NULL,0,MAX(id)) id FROM householdHosp WHERE householdId=?";
+        sql = "SELECT MAX(id) id FROM householdHosp WHERE householdId=?";
         generateNextId(sql, [householdId], request, "hosp")
     }
 
@@ -126,7 +128,7 @@ class IDService {
     String getNextHead(HttpServletRequest request, HttpServletResponse response,
                        @PathVariable("householdId") long householdId) {
 
-        sql = "SELECT IF(MAX(memberId) IS NULL,0,MAX(memberId)) id FROM member WHERE householdId=? ";
+        sql = "SELECT MAX(memberId) id FROM member WHERE householdId=? ";
         generateNextId(sql, [householdId], request, "member")
 
     }
