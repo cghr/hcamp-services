@@ -1,0 +1,13 @@
+TRUNCATE TABLE invitationCard;
+INSERT INTO invitationCard(memberId,phn) values(100010101,100001);
+INSERT INTO invitationCard(memberId,phn) values(100010102,100002);
+INSERT INTO invitationCard(memberId,phn) values(100010103,100003);
+INSERT INTO invitationCard(memberId,phn) values(100010104,100004);
+INSERT INTO invitationCard(memberId,phn) values(100010105,100005);
+INSERT INTO invitationCard(memberId,phn) values(100010106,100006);
+INSERT INTO invitationCard(memberId,phn) values(100010107,100007);
+INSERT INTO invitationCard(memberId,phn) values(100010108,100008);
+INSERT INTO invitationCard(memberId,phn) values(100010109,100009);
+INSERT INTO invitationCard(memberId,phn) values(100010110,100010);
+INSERT INTO invitationCard(memberId,phn) values(100010111,100011);
+INSERT INTO invitationCard(memberId,phn) values(100010112,100012);

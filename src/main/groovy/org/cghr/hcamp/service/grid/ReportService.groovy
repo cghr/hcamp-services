@@ -1,4 +1,4 @@
-package org.cghr.hc.client.service.grid
+package org.cghr.hcamp.service.grid
 
 import org.cghr.commons.db.DbAccess
 import org.cghr.dataViewModel.DataModelUtil
@@ -29,19 +29,8 @@ class ReportService {
     @ResponseBody
     String getReport(@PathVariable("reportId") int reportId) {
 
-        switch (reportId) {
-
-            case 11:
-                sql = "select * from area";
-                break;
-            case 12:
-                sql = "select id,username,role from user";
-
-            default:
-                break;
-
-
-        }
+        Integer wrkstn = reportId - 10
+        sql = "select * from wrkstn$wrkstn"
 
         constructJsonResponse(sql, [])
 
